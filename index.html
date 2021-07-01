@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript ketvirta paskaita</title>
+</head>
+
+<body>
+    <script>
+        "use strickt"
+
+        //Switch sakinys - jis leidžia daryti tam tikras daug vietos užimančias sąlygas
+
+        var siosDienosData = new Date();
+        var diena = siosDienosData.getDay();  // Diena rašoma nuo 0 iki 6
+
+        // var diena = 7;
+
+        // 0 - Sekmadienis
+        // 1 - Pirmadienis
+        // 2 - Antradienis
+        // 3 - Trečiadienis
+        // 4 - Ketvirtadienis
+        // 5 - Penktadienis
+        // 6 - Šeštadienis
+
+        // Pagal gautus kintamojo diena skaičius, išvesti savaitės dieną žodžiais
+
+        if (diena == 0) {
+            console.log("Sekmadienis");
+        } else if (diena == 1) {
+            console.log("Pirmadienis");
+        } else if (diena == 2) {
+            console.log("Andradienis");
+        } else if (diena == 3) {
+            console.log("Tre2iadienis");
+        } else if (diena == 4) {
+            console.log("Ketvirtadienis");
+        } else if (diena == 5) {
+            console.log("Penktadienis");
+        } else if (diena == 6) {
+            console.log("Sestadienis");
+        } else {
+            console.log("Tokios dienos nėra");
+        }
+
+
+
+        //Switch - jeigu kazkokia vidurine salyga tenkinama, situ atveju mums to nereikia, reikai naudoti break.
+        //Switcho paskirti - yra i6rinkti tam tik1 funkcionalum1 iš daug parametrų
+        switch (diena) {    //Swicthe galima tikinti tik atveji diena == 0, negaliem tikrinti dinea > 0 ar diena < 0
+            case 0:         //Jeigu atvejis, kai diena = 0, mums isves sekmadieni. Taip pat case: (Gali buti kintamasis)
+                console.log("Sekmadienis");
+                break;
+            case 1:
+                console.log("Pirmadienis");
+                break;
+            case 2:
+                console.log("Antradienis");
+                break;
+            case 3:
+                console.log("Treciadienis");
+                break;
+            case 4:
+                console.log("Ketvirtadienis");
+                break;
+            case 5:
+                console.log("Penktadienis");
+                break;
+            case 6:
+                console.log("Sestadienis");
+                break;
+            default:          // Default čia veikia kaip else.
+                console.log("Tokios dienos nėra");
+        }
+
+        console.log(diena); // Išvedimas testavimui
+
+
+        //MASYVAI - didele kintamuju seka, kuriame kikvienas turi savo numeri
+        // Masyve nebūtinai skaičiai, gali būti ir tekstas, gali būti ir kitas masyvas
+        // Reikia suprogramuoti 101 sandeliuka, kuris savyje turetu savo numeri
+
+        var sandelis1 = 1;
+
+        var sandelioMasyvas;
+        sandelioMasyvas = ["Pirmas", "Antras", "Trecias", "Ketvirtas", "Penktas", "Sestas", "Septintas"];
+        console.log(sandelioMasyvas);
+
+        // Atvaizduoti tik sandeliuką, kurio pavadinimas "Ketvirtas";
+        console.log(sandelioMasyvas[0]);
+        console.log(sandelioMasyvas[1]);
+        console.log(sandelioMasyvas[2]);
+        // Atvaizduoti tik sandeliuką, kurio pavadinimas "Ketvirtas";
+        console.log(sandelioMasyvas[3]);
+        console.log(sandelioMasyvas[4]);
+        console.log(sandelioMasyvas[5]);
+        console.log(sandelioMasyvas[6]);
+
+
+        //Galime masyva priskirti ir kintamajam
+        var ketvirtas = sandelioMasyvas[3];
+        console.log(ketvirtas);
+
+        //Galime prie masyvo priskirti elementą, bet reikia būti atsargiam ir 
+        // nepraleisti masyvo elementu sekos
+        // masyvą reikai pildyti iš eilės
+        sandelioMasyvas[7] = "Astuntas";
+        console.log(sandelioMasyvas);
+
+
+        //Galime pakeisti masyvo elemento reiksme, zinodami jo vieta
+        sandelioMasyvas[0] = "Pirmas atnaujintas";
+        console.log(sandelioMasyvas);
+
+
+        // Gali buti ir tuscias masyvas
+        var tusciasMasyvas = [];
+        // tusciasMasyvas[0] = "Nulis";
+        // tusciasMasyvas[1] = "Pirmas";
+
+        //si komanda prideda masyva i masyvo pabaiga
+
+        // Jeigu atliktume push komanda 101 karta - turesime masyva su 101 elementu
+        // tusciasMasyvas.push("Vienas");
+        // tusciasMasyvas.push("Antras");
+        console.log(tusciasMasyvas);
+
+        //CIKLAI
+        //Kazkas yra atliekamai nuolatos kazkiek tai kartu
+
+        //CIKLAS- for
+
+        //Apsibreziam ciklo kintamaji i (i standartiskai buna 0), nustatom iki kada
+        // ciklas tesis ir i++ didina i vienetuku iki to laiko
+        for (var i = 0; i < 300; i++) {
+            tusciasMasyvas.push(+ i);
+        }
+        console.log(tusciasMasyvas);
+
+        // Atvaizduoti visus sandeliukus atskirai tusciasMasyvas - 101
+
+        var masyvoIlgis = tusciasMasyvas.length; // Tuscio masyvo ilgis
+        console.log(masyvoIlgis);
+        for (var i = 0; i < masyvoIlgis; i++) {
+            console.log(tusciasMasyvas[i]);
+        }
+
+
+        //1. Susumuoti visus skaičius, easnčius 9 elementų masyve
+
+        var skaiciuMasyvas = [10, 15, 12, 3, 4, 9, 80, 30, 90];
+        var suma = 0
+
+        for (var i = 0; i < skaiciuMasyvas.length; i++) {
+            suma = suma + skaiciuMasyvas[i];
+            // 0+10=10
+            //10+15=25
+            //25+12 ir t.t.
+        }
+
+        console.log("Masyvo elementu suma " + suma);
+
+
+
+        //2. Turime masyva, kuriame kiekvienas elementas yra penkiazenklio skaiciaus skaitmuo
+        //pvz: 12345, jo masyvas [1,2,3,4,5]. Sudauginti visus masyve esancius skaicius
+
+        var skaitmenys = [5, 4, 3, 2, 1];
+        var sandauga = 1;
+
+        for (var i = 0; i < skaitmenys.length; i++) {
+            sandauga = sandauga * skaitmenys[i];
+        }
+
+        console.log("Penkiazenklio skaiciaus skaitmenu sandauga: " + sandauga);
+
+
+        //3. Sudauginkite 2 skaicius be daugybos operatoriaus
+        var a = 2;
+        var b = 4;
+        var sandauga = 0;
+        // var sandauga = a*b;
+        for (var i = 0; i < b; i++) {
+            sandauga = sandauga + a;
+        }
+        console.log("Ciklu sukurta sandauga: " + sandauga);
+
+
+        // CIKLAS WHILE - siek tiek primityvesnis, nei for. Cikle while galime nurodyti salyga,
+        // kiek ciklas turi trukti
+        //aa--  <<Vadinasi ciklas mazes, ir ivyks tik 1 karta.
+
+
+        var aa = 11;
+        while (aa > 10) {
+            console.log("labas");
+            aa--;
+        }
+
+        // 4. N-zenklio skaiciaus skaitmenis isvesti atskirai
+        // 123 - 1 2 3
+        // 999999 - 9 9 9 9 9 
+
+        var nsk = 8421;
+        //8421%10=1;8421 / 10 = 842.1~842
+        // 842%10=2 ; 842/10=84.2 ~84
+        //84%10=4; 84/10=8.4 ~8
+        //8%10 =8; 8/10=0.8~0
+
+
+        //Kaip kiekviena skaitmeni ideti i masyva?
+        while (nsk != 0) {
+            console.log(nsk % 10);
+            nsk = parseInt(nsk / 10);
+
+        }
+    </script>
+
+</body>
+
+</html>
